@@ -6,4 +6,5 @@ ROUTES = {
 }.freeze
 
 use AppLogger, logdev: File.expand_path('log/app.log', __dir__)
+use Rack::ContentType, 'text/plain'
 run Rack::URLMap.new(ROUTES)
